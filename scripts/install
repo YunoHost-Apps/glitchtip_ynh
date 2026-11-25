@@ -67,6 +67,9 @@ ynh_script_progression "Adding $app's configuration file..."
 ###
 ### Check the documentation of `ynh_config_add` for more info.
 
+secret_key=$(ynh_string_random) 
+ynh_app_setting_set --key="secret_key" --value=$secret_key
+
 ynh_config_add --template=".env" --destination="$install_dir/.env"
 
 # FIXME: this should be handled by the core in the future

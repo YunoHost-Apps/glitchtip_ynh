@@ -1,1 +1,1 @@
-Ceci est une fausse description des fonctionalités de l'app
+Collectez chaque erreur de votre projet en temps réel, organisez les pour les rendre utiles, et recevez des alertes quand et où vous voulez... sans exploser votre budget. Compatible avec les clients SDKs de Sentry, mais plus facile à exploiter. Propose la collecte d'erreurs, la mesure de performances, la mesure de disponibilité, et la collecte des journaux.
