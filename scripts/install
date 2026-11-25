@@ -152,23 +152,19 @@ ynh_script_progression "Installing $app..."
 
 pushd $install_dir
 
-ls
-ls frontend
-
 pushd ./frontend
 npm ci
 npm run build-prod
 popd
 
 # 3. Extract the zip file and move the dist/glitchtip-frontend/browser directory to the glitchtip-backend's dist folder.
-mv $install_dir/frontend/dist/glitchtip-frontend/browser $install_dir/backend/dist
+mv $install_dir/frontend/dist/glitchtip-frontend/browser $install_dir/backend/backend/dist
 
-pushd ./backend
+pushd ./backend/backend
 
 # 4. Create a Python virtual environment. Install uv and run uv sync to install Python dependencies.
 python3 -m venv venv
 venv/bin/pip install uv
-ls
 uv sync
 
 # 5. Set required environment variables.

@@ -24,7 +24,7 @@ chown -R "$app:www-data" "$install_dir"
 
 pushd $install_dir
 
-pushd ./backend
+pushd ./backend/backend
 
 # 4. Create a Python virtual environment. Install uv and run uv sync to install Python dependencies.
 python3 -m venv venv
