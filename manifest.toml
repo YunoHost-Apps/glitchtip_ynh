@@ -94,6 +94,9 @@ ram.runtime = "256M"
     # This will provision/deprovision a unix system user
     allow_email = "true"
 
+    [resources.nodejs]
+    version = "26"
+
     [resources.install_dir]
     # This will create/remove the install dir as /var/www/$app
     # and store the corresponding setting $install_dir
@@ -113,7 +116,7 @@ ram.runtime = "256M"
     [resources.apt]
     # This will automatically install/uninstall the following apt packages
     # and implicitly define the $phpversion setting as 8.0 (if phpX.Y-foobar dependencies are listed)
-    packages = "python3 python3-pip postgresql python3-venv npm"
+    packages = "python3 python3-pip postgresql python3-venv"
 
     [resources.database]
     # This will automatically provision/deprovison a MySQL DB and store the corresponding credentials in settings $db_user, $db_name, $db_pwd
