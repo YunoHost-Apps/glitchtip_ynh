@@ -24,8 +24,7 @@ chown -R "$app:www-data" "$install_dir"
 
 pushd $install_dir
 
-# 3. Extract the zip file and move the dist/glitchtip-frontend/browser directory to the glitchtip-backend's dist folder.
-mv $install_dir/frontend/dist/glitchtip-frontend/browser $install_dir/backend/dist
+pushd ./backend
 
 # 4. Create a Python virtual environment. Install uv and run uv sync to install Python dependencies.
 python3 -m venv venv
@@ -39,6 +38,7 @@ uv sync
 
 # 7. Collect static files
 ./manage.py collectstatic
+popd
 
 popd
 
