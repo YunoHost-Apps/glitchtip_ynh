@@ -1,4 +1,5 @@
 #!/bin/bash
+### App file generated with YoloGen, the YunoHost app generator, version .
 
 #=================================================
 # IMPORT GENERIC HELPERS
@@ -25,27 +26,18 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Removing system configurations related to $app..."
 
-### This should be a symetric version of what happens in the install script
-
-ynh_config_remove_fail2ban
+ynh_psql_remove_db
 
 ynh_config_remove_logrotate
 
 # Remove the service from the list of services known by YunoHost (added from `yunohost service add`)
 if ynh_hide_warnings yunohost service status "$app" >/dev/null; then
-    yunohost service remove "$app"
+	yunohost service remove "$app"
 fi
+
 ynh_config_remove_systemd
 
 ynh_config_remove_nginx
-
-ynh_config_remove_phpfpm
-
-# Remove other various files specific to the app... such as:
-
-ynh_safe_rm "/etc/cron.d/$app"
-
-ynh_safe_rm "/etc/$app"
 
 #=================================================
 # END OF SCRIPT

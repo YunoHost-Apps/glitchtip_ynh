@@ -1,1 +1,1 @@
-This is a dummy description of this app features
+Collect every error from your project in real time, organize them to make them useful, and receive alerts when and where you want... without breaking the budget. Compatible with Sentry client SDKs, but easier to run. Features error tracking, performance monitoring, uptime monitoring and logs.
