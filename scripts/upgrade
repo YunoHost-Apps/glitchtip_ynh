@@ -71,7 +71,7 @@ pushd ./backend
 
 # 4. Create a Python virtual environment. Install uv and run uv sync to install Python dependencies.
 python3 -m venv venv
-pip install uv
+venv/bin/pip install uv
 uv sync
 
 # 5. Set required environment variables.
